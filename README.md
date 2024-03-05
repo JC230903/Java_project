@@ -1,2 +1,2 @@
-# Java_project
-java project for semster-4 
+# Python_project
+python project for semester-4 
