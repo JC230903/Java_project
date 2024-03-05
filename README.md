@@ -1,2 +1,2 @@
 # Java_project
-java project for sesemster-4 
+java project for semster-4 
