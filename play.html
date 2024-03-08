@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Music Player</title>
+</head>
+<body>
+    <div class="container">
+        <audio id="audio-player" controls autoplay>
+            <source src="{{ audio_state.track_info.preview_url }}">
+        </audio>
+
+        <div class="controls">
+            <button onclick="playPause()" class="control-button">Play/Pause</button>
+            <button onclick="stop()" class="control-button">Stop</button>
+            <button onclick="nextTrack()" class="control-button">Next Track</button>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <script>
+        var socket = io.connect('http://' + document.domain + ':' + location.port);
+
+        function playPause() {
+            socket.emit('play');
+        }
+
+        function stop() {
+            socket.emit('stop');
+        }
+
+        function nextTrack() {
+            socket.emit('next_track');
+        }
+
+        socket.on('update_state', function(data) {
+            document.getElementById('audio-player').src = data.track_info.preview_url;
+            if (data.playing && !data.paused) {
+                document.getElementById('audio-player').play();
+            } else {
+                document.getElementById('audio-player').pause();
+            }
+        });
+    </script>
+</body>
+</html>
