@@ -1,0 +1,93 @@
+/* styles.css */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #191414;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+.success-container {
+    background-color: #1F1D1D;
+    border-radius: 12px;
+    overflow: hidden;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.success-content {
+    padding: 30px;
+}
+
+.animated-text {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease-in-out forwards;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    letter-spacing: 1px; /* Increased letter spacing */
+}
+
+h1, p {
+    margin: 0;
+}
+
+h1 {
+    color: #1db954;
+    font-size: 26px;
+    margin-bottom: 15px;
+}
+
+p {
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+button {
+    background-color: #1db954;
+    color: #fff;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s, transform 0.3s;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease-in-out 0.5s forwards;
+    border-radius: 6px;
+}
+
+button:hover {
+    background-color: #25cc67;
+    transform: scale(1.05);
+}
+
+/* Additional Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
