@@ -1,10 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log In With Spotify</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Log In With Spotify</h1>
-    <a href="{{ url_for('login_with_spotify') }}">Log In With Spotify</a>
+    <header>
+        <h1>Log In With Spotify</h1>
+    </header>
+
+    <main>
+        <a href="{{ url_for('login_with_spotify') }}">Log In With Spotify</a>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 Shamsound. All rights reserved.</p>
+    </footer>
 </body>
 </html>
