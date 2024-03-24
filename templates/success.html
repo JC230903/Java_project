@@ -39,6 +39,9 @@
     <button onclick="pause()">Pause</button>
     <button onclick="nextTrack()">Next Track</button>
 
+    <!-- Add link to the search page -->
+    <a href="{{ url_for('search') }}">Search Songs</a>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
     <script>
         var socket = io.connect('http://' + document.domain + ':' + location.port);

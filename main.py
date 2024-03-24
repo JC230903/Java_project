@@ -1,19 +1,23 @@
+# Import necessary modules
 from flask import Flask, request, redirect, session, render_template, url_for
 from flask_socketio import SocketIO
 import requests
 import os
 from urllib.parse import urlencode
 
+# Initialize Flask app and SocketIO
 app = Flask(__name__)
 socketio = SocketIO(app)
 app.secret_key = os.urandom(24)
 
+# Spotify API credentials
 client_id = "ff7e93d10fb44718b8ee986a1c32f14a"
 client_secret = "9856d7100ceb4010901db998dbec107c"
 redirect_uri = "http://127.0.0.1:5000/callback"
 auth_url = "https://accounts.spotify.com/authorize"
 token_url = "https://accounts.spotify.com/api/token"
 
+# Define routes
 @app.route('/')
 def home():
     return render_template('index.html')
@@ -54,6 +58,11 @@ def callback():
 def success():
     return render_template("success.html")
 
+@app.route('/search')  # Define the search route
+def search():
+    return render_template('search.html')
+
+# Define SocketIO event handlers
 @socketio.on('play')
 def handle_play():
     access_token = session.get("access_token")

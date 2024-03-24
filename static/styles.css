@@ -1,0 +1,93 @@
+/* Reset default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+/* Header styles */
+header {
+    background-color: #1DB954;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Heading styles */
+h1 {
+    margin: 0;
+}
+
+/* Main content styles */
+main {
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* Login button styles */
+.login-btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #1DB954;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 25px;
+    border: 2px solid #1DB954;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.login-btn:hover {
+    background-color: #168f3f;
+    border-color: #168f3f;
+}
+
+/* Footer styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Custom button styles */
+button {
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Additional styles for login page */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.login-box {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
